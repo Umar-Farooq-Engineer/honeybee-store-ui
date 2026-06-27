@@ -43,11 +43,11 @@ const Addproduct = () => {
     formData.append("stock", stock);
 
     try {
-      let url = 'http://localhost:8000/api/products';
+      let url = 'import.meta.env.VITE_API_URL/api/products';
       let method = 'POST';
 
       if (editingProduct) {
-        url = `http://localhost:8000/api/products/${editingProduct._id}`;
+        url = `${import.meta.env.VITE_API_URL}/api/products/${editingProduct._id}`;
         method = 'PUT';
       }
 
