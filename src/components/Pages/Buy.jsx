@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
-import { getImageUrl } from '../../utils/api';
-import './BuyerForm.css';
+import React, { useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+import { getImageUrl } from "../../utils/api";
+import "./BuyerForm.css";
 
 const BuyerForm = () => {
   const navigate = useNavigate();
@@ -9,13 +9,13 @@ const BuyerForm = () => {
   const product = location.state?.product;
 
   const [formData, setFormData] = useState({
-    name: '',
-    address: '',
-    phone: '',
+    name: "",
+    address: "",
+    phone: "",
     quantity: 1,
   });
-  const [error, setError] = useState('');
-  const [success, setSuccess] = useState('');
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -28,45 +28,51 @@ const BuyerForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError('');
-    setSuccess('');
+    setError("");
+    setSuccess("");
 
     if (!product) {
-      setError('Please select a product first.');
+      setError("Please select a product first.");
       return;
     }
 
     if (!validatePhone(formData.phone)) {
-      setError('Phone number must be 10–11 digits.');
+      setError("Phone number must be 10–11 digits.");
       return;
     }
 
     try {
-      const response = await fetch( 'https://honeybee-backend-vl3k.onrender.com/api/orders/create', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${localStorage.getItem('token')}`,
+      const response = await fetch(
+        "https://honeybee-backend-vl3k.onrender.com/api/orders/create",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+          body: JSON.stringify({
+            productId: product._id,
+            productName: product.name,
+            price: product.price,
+            totalPrice: product.price * Number(formData.quantity),
+            name: formData.name,
+            address: formData.address,
+            phone: formData.phone,
+            quantity: Number(formData.quantity),
+          }),
         },
-        body: JSON.stringify({
-          productId: product._id,
-          name: formData.name,
-          address: formData.address,
-          phone: formData.phone,
-          quantity: Number(formData.quantity),
-        }),
-      });
+      );
 
       const data = await response.json();
       if (response.ok) {
-        setSuccess('Order placed successfully. Redirecting to payment...');
-        setFormData({ name: '', address: '', phone: '', quantity: 1 });
-        setTimeout(() => navigate('/dashboard'), 1500);
+        setSuccess("Order placed successfully. Redirecting to payment...");
+        setFormData({ name: "", address: "", phone: "", quantity: 1 });
+        setTimeout(() => navigate("/dashboard"), 1500);
       } else {
-        setError(data.message || 'Failed to submit order.');
+        setError(data.message || "Failed to submit order.");
       }
     } catch {
-      setError('Something went wrong. Please try again.');
+      setError("Something went wrong. Please try again.");
     }
   };
 
@@ -76,12 +82,13 @@ const BuyerForm = () => {
       {product ? (
         <div className="checkout-summary">
           <div className="checkout-image-container">
-            <img 
-              src={getImageUrl(product.image)} 
+            <img
+              src={getImageUrl(product.image)}
               alt={product.name}
               className="checkout-image"
               onError={(e) => {
-                e.target.src = 'https://via.placeholder.com/200x200?text=Product+Image';
+                e.target.src =
+                  "https://via.placeholder.com/200x200?text=Product+Image";
               }}
             />
           </div>
@@ -132,7 +139,7 @@ const BuyerForm = () => {
         {error && <p className="error">{error}</p>}
         {success && <p className="success">{success}</p>}
         <button type="submit">Place Order</button>
-        <button type="button" onClick={() => navigate('/product')}>
+        <button type="button" onClick={() => navigate("/product")}>
           Back To Products
         </button>
       </form>
@@ -141,4 +148,3 @@ const BuyerForm = () => {
 };
 
 export default BuyerForm;
-
