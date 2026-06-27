@@ -1,0 +1,149 @@
+.home-page {
+  background: linear-gradient(180deg, #fff8ec 0%, #fff5e0 100%);
+  padding: 40px 20px;
+  color: #1f2937;
+}
+
+.home-hero {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 30px;
+  align-items: center;
+}
+
+.home-hero-text {
+  text-align: left;
+}
+
+.home-hero-title {
+  font-size: clamp(2.4rem, 5vw, 3.8rem);
+  margin-bottom: 20px;
+  color: #b45309;
+}
+
+.home-hero-subtitle {
+  font-size: clamp(1rem, 2.2vw, 1.2rem);
+  line-height: 1.75;
+  max-width: 620px;
+  margin-bottom: 24px;
+}
+
+.home-hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 10px;
+}
+
+.home-hero-button,
+.home-hero-button-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 24px;
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.home-hero-button {
+  background: #c2410c;
+  color: #ffffff;
+}
+
+.home-hero-button-secondary {
+  background: rgba(196, 64, 12, 0.1);
+  color: #92400e;
+}
+
+.home-hero-image-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.home-hero-image {
+  width: 100%;
+  max-width: 420px;
+  max-height: 320px;
+  border-radius: 24px;
+  object-fit: cover;
+  box-shadow: 0 24px 60px rgba(21, 61, 89, 0.12);
+}
+
+.home-products {
+  max-width: 1200px;
+  margin: 40px auto 0;
+}
+
+.home-products-title {
+  font-size: clamp(1.9rem, 3vw, 2.6rem);
+  color: #9a3412;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.product-card {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 18px;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+  text-align: center;
+}
+
+.product-image {
+  width: 100%;
+  max-width: 260px;
+  max-height: 200px;
+  margin: 0 auto 18px;
+  object-fit: contain;
+}
+
+.product-name {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.product-description {
+  color: #475569;
+  line-height: 1.6;
+  font-size: 0.96rem;
+}
+
+@media (max-width: 900px) {
+  .home-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .home-hero-image {
+    max-width: 360px;
+    max-height: 300px;
+  }
+}
+
+@media (max-width: 640px) {
+  .home-page {
+    padding: 24px 16px;
+  }
+
+  .home-products {
+    margin-top: 28px;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-hero-button,
+  .home-hero-button-secondary {
+    width: 100%;
+  }
+}

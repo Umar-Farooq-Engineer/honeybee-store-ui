@@ -1,0 +1,76 @@
+/* Container */
+.upload-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #fff8e1; /* honey yellow background */
+  padding: 20px;
+}
+
+/* Title */
+.upload-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #d97706; /* honey brown */
+  margin-bottom: 20px;
+}
+
+/* Form */
+.upload-form {
+  background: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Inputs & Textarea */
+.upload-form input[type="text"],
+.upload-form input[type="file"],
+.upload-form textarea {
+  width: 100%;
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border 0.3s ease;
+}
+
+.upload-form input:focus,
+.upload-form textarea:focus {
+  border-color: #f59e0b; /* highlight honey yellow */
+  outline: none;
+}
+
+/* File input */
+.upload-form input[type="file"] {
+  border: none;
+  padding: 5px;
+  background: #fffaf0;
+  cursor: pointer;
+}
+
+/* Submit Button */
+.upload-form button {
+  background: #f59e0b;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.back-btn{
+    margin-left: 110px;
+}
+.upload-form button:hover {
+  background: #d97706;
+}
