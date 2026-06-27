@@ -30,7 +30,7 @@ const Signup = () => {
     }
 
     try {
-      const response = await fetch("https://honeybee-backend.onrender.com/api/auth/signup", {
+      const response = await fetch("https://honeybee-backend-vl3k.onrender.com/api/auth/signup", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password, role: 'customer' }),

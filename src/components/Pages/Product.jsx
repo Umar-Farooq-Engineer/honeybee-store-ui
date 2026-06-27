@@ -99,7 +99,7 @@ const Product = () => {
                   alt={product.name}
                   crossOrigin="anonymous"
                   onError={(e) => {
-                    const placeholderSVG = `<svg xmlns="http://www.w3.org/2000/svg\" width=\"200\" height=\"200\"><rect width=\"200\" height=\"200\" fill=\"%23f3f4f6\"/><text x=\"50%\" y=\"50%\" dominant-baseline=\"middle\" text-anchor=\"middle\" fill=\"%239ca3af\" font-size=\"16\">No image</text></svg>`;
+                    const placeholderSVG = `<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200"><rect width="200" height="200" fill="%23f3f4f6"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="%239ca3af" font-size="16">No image</text></svg>`;
                     e.target.src = `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(placeholderSVG)}`;
                   }}
                 />
