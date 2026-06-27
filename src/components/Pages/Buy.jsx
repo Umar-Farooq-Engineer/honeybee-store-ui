@@ -42,7 +42,7 @@ const BuyerForm = () => {
     }
 
     try {
-      const response = await fetch( `${import.meta.env.VITE_API_URL}/api/orders/create`, {
+      const response = await fetch( 'https://honeybee-backend-vl3k.onrender.com/api/orders/create', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
