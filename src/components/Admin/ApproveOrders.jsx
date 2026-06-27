@@ -29,7 +29,7 @@ const ApproveOrders = () => {
         return;
       }
       
-      const res = await fetch('import.meta.env.VITE_API_URL/api/orders', {
+      const res = await fetch('https://honeybee-backend-vl3k.onrender.com/api/orders', {
         headers: {
           'Content-Type': 'application/json',
           Authorization: `Bearer ${token}`,
@@ -70,7 +70,7 @@ const ApproveOrders = () => {
         return;
       }
       
-      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/orders/${orderId}/status`, {
+      const res = await fetch(`https://honeybee-backend-vl3k.onrender.com/api/orders/${orderId}/status`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

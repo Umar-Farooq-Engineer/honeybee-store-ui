@@ -9,7 +9,7 @@ const AdminDashboard = () => {
   useEffect(() => {
     const fetchStats = async () => {
       try {
-        const res = await fetch('import.meta.env.VITE_API_URL/api/products/admin/stats', {
+        const res = await fetch('https://honeybee-backend-vl3k.onrender.com/api/products/admin/stats', {
           headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${localStorage.getItem('token')}` },
         });
         const data = await res.json();

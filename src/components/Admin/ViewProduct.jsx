@@ -11,7 +11,7 @@ const ViewProduct = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const res = await fetch("import.meta.env.VITE_API_URL/api/products");
+        const res = await fetch("https://honeybee-backend-vl3k.onrender.com/api/products");
         const data = await res.json();
         setProducts(data.products || []);
       } catch (error) {
@@ -25,7 +25,7 @@ const ViewProduct = () => {
   const handleDelete = async (id) => {
     if (!window.confirm("Are you sure you want to delete this product?")) return;
     try {
-      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/products/${id}`, {
+      const res = await fetch(`https://honeybee-backend-vl3k.onrender.com/api/products/${id}`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`,

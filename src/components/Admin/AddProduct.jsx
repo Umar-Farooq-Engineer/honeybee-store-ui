@@ -43,7 +43,7 @@ const Addproduct = () => {
     formData.append("stock", stock);
 
     try {
-      let url = 'import.meta.env.VITE_API_URL/api/products';
+      let url = 'https://honeybee-backend-vl3k.onrender.com/api/products';
       let method = 'POST';
 
       if (editingProduct) {
