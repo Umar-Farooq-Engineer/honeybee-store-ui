@@ -47,7 +47,7 @@ const Addproduct = () => {
       let method = 'POST';
 
       if (editingProduct) {
-        url = `${import.meta.env.VITE_API_URL}/api/products/${editingProduct._id}`;
+        url = `https://honeybee-backend-vl3k.onrender.com/api/products/${editingProduct._id}`;
         method = 'PUT';
       }
 
