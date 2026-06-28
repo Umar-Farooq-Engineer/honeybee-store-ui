@@ -24,7 +24,7 @@ const Product = () => {
         page,
         limit: 8,
       });
-      const res = await fetch(`https://honeybee-backend-vl3k.onrender.com/api/products`);
+      const res = await fetch(`https://honeybee-backend-vl3k.onrender.com/api/products?${params.toString()}`);
       const data = await res.json();
       if (data.success) {
         setProducts(data.products);
