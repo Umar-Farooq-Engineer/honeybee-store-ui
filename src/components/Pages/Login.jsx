@@ -177,7 +177,7 @@ const Login = () => {
 
             Don't have an account?{" "}
 
-            <Link to="/signup" style={{color:"blue",textDecoration:"none"}}>
+            <Link to="/signup" className="signup-link-color">
               Signup
             </Link>
 

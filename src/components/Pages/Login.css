@@ -90,3 +90,8 @@
 .login-btn:hover {
   background: #43a047;
 }
+.signup-link-color {
+  color: blue;
+  font-weight: bold;
+  text-decoration: none;
+}
